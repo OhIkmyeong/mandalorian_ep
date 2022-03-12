@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* [타이틀] */
+header{
+    position:relative;
+    width:100%; max-width:500px;
+    margin:calc(var(--gap) * 2) auto; padding:0 var(--gap);
+    text-align:center;
+    color:#fff;
+}
+
+[id ^="logo-"]{font-family:"Mandalorian","Pretendard";}
+
+#logo-starwars{
+    position:relative;
+    width:min(150px, 25vw); aspect-ratio:9/1;
+    margin:0 auto;
+    background:url(./../img/logo-starwars.svg) no-repeat center bottom / 100% auto;}
+
+#logo-the{
+    position:relative;
+    width:100%;
+    margin:.8em 0 0;
+    font-size:18px; letter-spacing:.2em;}
+
+    #logo-the span::before,
+    #logo-the span::after{
+        content:'';display:block; position:absolute;
+        top:50%;
+        width:calc(50% - 4ch); height:1px;
+        background:#fff;}
+
+        #logo-the span::before{left:0;}
+        #logo-the span::after{right:0;}
+
+#logo-mando{
+    position:relative;
+    font-size:95px;
+    background: linear-gradient(to bottom, #fffdb299,rgba(255,255,255,1), #8ca6ce,rgba(255,255,255,.1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;}
+
+#logo-mando::before{
+    content:'';display:block;position:absolute;
+    top:15px;left:0;
+    width:5px;aspect-ratio:1/1;
+    background:rgba(255,255,255,.5);
+    border-radius:50%;
+    mix-blend-mode:screen;
+    box-shadow:
+        0 0 .25rem 0 #fffdb2,
+        0 0 1rem .9rem #ffac3455,
+        0 0 2rem 1rem #ed501b33,
+        0 0 3rem 1rem #ed501b33;
+    filter:blur(2px);}
+
+#logo-mando::after{
+    content:'';display:block;position:absolute;
+    bottom:10px; left:50%; transform:translateX(-50%);
+    width:100%; height:2px;
+    background:radial-gradient(rgba(255,255,255,1),rgba(255,255,255,0));
+    border-radius:50%;
+    box-shadow:
+        0 0 1rem 1px #fffdb2aa,
+        0 0 1rem .5rem #ffac3411,
+        0 0 1rem .5rem #ed501b33,
+        0 0 2rem 1rem #ed501b33;
+    mix-blend-mode:hard-light;
+    filter:blur(1px);
+}
+
+header .info{
+    margin-top:1em;
+    line-height:1.6;
+    font-size:14px;color:rgba(255,255,255,.8);}

@@ -1,0 +1,41 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+@import url(./font.css);
+
+:root{
+    --f1:#eef;
+    --dark-1:#010f1a;
+    --dark-2:#002d4e;
+    --dark-3:#156276;
+    --dark-4:#6c929f;
+    --light-1:#fffdb2;
+    --light-2:#ffac34;
+    --light-3:#ed501b;
+    --disney-1:#fff;
+    --disney-2:#01e7f9;
+    --disney-3:#006ff8;
+
+    --gd-dark:linear-gradient(var(--dark-1), var(--dark-2), var(--dark-3) 80%, var(--dark-4));
+    --gd-disney:conic-gradient(var(--disney-3),var(--disney-2),var(--disney-1) 18%,transparent 19%,transparent 80%,var(--disney-3));
+    --wid:1040px;
+    --gap:40px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+li{list-style-type:none;}a{text-decoration:none;color:inherit;}
+table{table-layout:fixed;border-collapse:separate;border-spacing:0;width:100%;}
+
+html,body{
+    width:100%;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-size:16px; font-weight:500;color:var(--f1);}
+
+body{
+    min-height:100vh;
+    background:var(--gd-dark);}
+
+#bg{
+    position:fixed; z-index:-1;
+    top:0;left:0;
+    width:100%; height:100vh;
+    background:var(--gd-dark);
+    pointer-events:none;}

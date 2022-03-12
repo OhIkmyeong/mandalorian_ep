@@ -1,0 +1,35 @@
+@charset "utf-8";
+main{
+    position:relative;
+    width:100%; max-width:var(--wid);
+    margin:0 auto;}
+
+.season{
+    position:relative;
+    width:100%;
+    padding:var(--gap);
+    border-bottom:2px dotted rgba(255,255,255,.1);}
+
+/* [타이틀] */
+.season h2{
+    position:relative;
+    margin-bottom:var(--gap);
+    text-align:center;font-size:1rem;
+    font-weight:100;color:rgba(255,255,255,.8);}
+
+    .season h2::before{
+        content:'';display:block; position:absolute;
+        left:50%;top:0%; transform:translate(-50%,-45%) scale(.65);
+        width:100px; aspect-ratio:1/1;
+        border-radius:50%;
+        background:var(--gd-disney);
+        clip-path:path('M50,0C22.4,0,0,22.4,0,50c0,27.6,22.4,50,50,50s50-22.4,50-50C100,22.4,77.6,0,50,0z M50,97C24,97,3,76,3,50S24,3,50,3s47,21,47,47S76,97,50,97z');
+    }
+    
+/* [테이블] */
+.tbl{
+    width:100%;
+}
+
+/* [라벨] */
+/* 취소된거도 추가해라 */
