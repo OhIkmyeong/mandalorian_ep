@@ -28,8 +28,53 @@ main{
     
 /* [테이블] */
 .tbl{
+    position:relative;
     width:100%;
-}
+    margin-bottom:var(--gap);
+    border-top:1px solid var(--disney-3);}
+
+.tbl caption{display:none;}
+
+.tbl th, .tbl td{
+    position:relative;
+    padding:1em;
+    line-height:1.65;
+    background:rgba(0,0,0,.05);
+    border:1px solid rgba(0,0,0,.1); border-width:0 1px 1px 0;}
+
+.tbl th{
+    background:rgba(0,0,0,.15);
+    font-size:14px;font-weight:600;color:rgba(255,255,255,.7);}
+
+.tbl td p{text-indent:1em; margin-top:1em;}
+.tbl td p:first-child{margin-top:0;}
+    /* thead */
+    .tbl thead th{font-size:1rem;}
+    .tbl thead th:first-child{color:yellow;}
 
 /* [라벨] */
-/* 취소된거도 추가해라 */
+.lbl{
+    display:inline-block;
+    position:relative;
+    margin:0 5px;
+    font-weight:500;
+    cursor:pointer;}
+
+    .lbl::before,.lbl::after{opacity:.5;font-weight:400;}
+    .lbl::before{content:'[ ';}
+    .lbl::after{content:' ]';}
+
+
+    /* 취소 */
+    .lbl.cancel{text-decoration:line-through; text-decoration-thickness:3px;}
+
+    /* 더보기 */
+    .lbl[data-more]{border-bottom:2px dotted var(--disney-3);}
+
+
+/* [타임스탬프] */
+.timeStamp{
+    padding:5px; 
+    margin-right:10px; margin-left:-.5em;
+    background:rgba(0,0,0,.2);
+    font-weight:600; font-size:.8em; color:var(--disney-2);}

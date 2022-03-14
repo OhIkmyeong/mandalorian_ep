@@ -27,10 +27,9 @@ table{table-layout:fixed;border-collapse:separate;border-spacing:0;width:100%;}
 html,body{
     width:100%;
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    font-size:16px; font-weight:500;color:var(--f1);}
+    font-size:16px; font-weight:300;color:var(--f1);}
 
 body{
-    min-height:100vh;
     background:var(--gd-dark);}
 
 #bg{
