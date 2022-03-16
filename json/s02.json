@@ -1,0 +1,69 @@
+{
+    "season" : 2,
+    "episode" : [
+        {
+            "chapter":9,
+            "title": "The Marshal",
+            "weapon":[
+                {"name" : "test", "used":true, "stat":true},
+                {"name" : "test", "used":false, "stat":false}
+            ],
+            "defense" : [
+                {"name" : "test", "stat":true},
+                {"name" : "test", "stat":false}
+            ],
+            "transportation":[
+                {"name" : "Razor Crest", "stat":true}
+            ],
+            "plot_story" : ["lorem10", "lorem100"],
+            "plot_bait": [
+                {"time" : "00:00", "content":"asdfasdfasdf"},
+                {"time" : "00:00", "content":"asdfasdfasdf"}
+            ],
+            "relation" : {
+                "good" : [{"name":"카라듄","content":"있으면 쓰고 없으면 말고"}],
+                "soso" : [{"name":"그리프 카가"}],
+                "bad" : []
+            },
+            "point_grogu" : [
+                {"time" : "00:00", "content":"asdfasdfasdf"},
+                {"time" : "00:00", "content":"asdfasdfasdf"}
+            ],
+            "point_dindjarin" : [
+                {"time" : "00:00", "content":"asdfasdfasdf"}
+            ]
+        },
+        {
+            "chapter":10,
+            "title": "The Passenger",
+            "weapon":[
+                {"name" : "test", "stat":true},
+                {"name" : "test", "stat":false}
+            ],
+            "defense" : [
+                {"name" : "test", "stat":true},
+                {"name" : "test", "stat":false}
+            ],
+            "transportation":[
+                {"name" : "Razor Crest", "stat":true}
+            ],
+            "plot_story" : ["lorem10", "lorem100"],
+            "plot_bait": [
+                {"time" : "00:00", "content":"asdfasdfasdf"},
+                {"time" : "00:00", "content":"asdfasdfasdf"}
+            ],
+            "relation" : {
+                "good" : [{"name":"카라듄","content":"있으면 쓰고 없으면 말고"}],
+                "soso" : [{"name":"그리프 카가"}],
+                "bad" : []
+            },
+            "point_grogu" : [
+                {"time" : "00:00", "content":"asdfasdfasdf"},
+                {"time" : "00:00", "content":"asdfasdfasdf"}
+            ],
+            "point_dindjarin" : [
+                {"time" : "00:00", "content":"asdfasdfasdf"}
+            ]
+        }
+    ]
+    }

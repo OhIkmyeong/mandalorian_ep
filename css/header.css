@@ -3,7 +3,7 @@
 header{
     position:relative;
     width:100%; max-width:500px;
-    margin:calc(var(--gap) * 2) auto; padding:0 var(--gap);
+    margin:calc(var(--gap) * 2) auto var(--gap); padding:0 var(--gap);
     text-align:center;
     color:#fff;
 }
