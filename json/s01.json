@@ -13,7 +13,7 @@
             {"name" : "test", "stat":false}
         ],
         "transportation":[
-            {"name" : "Razor Crest", "stat":true}
+            {"name" : "레이저 크레스트", "stat":true}
         ],
         "plot_story" : ["lorem10", "lorem100"],
         "plot_bait": [
@@ -21,9 +21,9 @@
             {"time" : "00:00", "content":"asdfasdfasdf"}
         ],
         "relation" : {
-            "good" : [{"name":"카라듄","content":"있으면 쓰고 없으면 말고"}],
+            "good" : [{"name":"카라듄","content":"있으면 쓰고 없으면 말고"},{"name":"메이필드"}],
             "soso" : [{"name":"그리프 카가"}],
-            "bad" : []
+            "bad" : [{"name":"그리프 카가"}]
         },
         "point_grogu" : [
             {"time" : "00:00", "content":"asdfasdfasdf"},
@@ -45,7 +45,7 @@
             {"name" : "test", "stat":false}
         ],
         "transportation":[
-            {"name" : "Razor Crest", "stat":true}
+            {"name" : "레이저 크레스트", "stat":true}
         ],
         "plot_story" : ["lorem10", "lorem100"],
         "plot_bait": [

@@ -27,7 +27,7 @@ header{
         content:'';display:block; position:absolute;
         top:50%;
         width:calc(50% - 4ch); height:1px;
-        background:#fff;}
+        background:rgba(255,255,255,.3);}
 
         #logo-the span::before{left:0;}
         #logo-the span::after{right:0;}

@@ -101,12 +101,23 @@ export class Include{
         return $thead;
     }//make_thead
 
-    /* ✨ tbody */
+    /* ✨✨✨✨ tbody */
     make_tbody(ep){
         const $tbody = document.createElement('TBODY');
 
         this.tr_weapon(ep.weapon,$tbody);
         this.tr_defense(ep.defense,$tbody);
+        this.tr_transportation(ep.transportation, $tbody);
+
+        this.tr_story(ep.plot_story, $tbody);
+        this.tr_bait(ep.plot_bait, $tbody);
+        
+        this.tr_relation_good(ep.relation.good, $tbody);
+        this.tr_relation_soso(ep.relation.soso, $tbody);
+        this.tr_relation_bad(ep.relation.bad, $tbody);
+
+        this.tr_p_grogu(ep.point_grogu, $tbody);
+        this.tr_p_dindjarin(ep.point_dindjarin, $tbody);
 
         return $tbody;
     }//make_tbody
@@ -149,28 +160,125 @@ export class Include{
     }//tr_defense
     
     /* 이동수단 */
-    tr_transportation(transportation, $tbody){}//tr_transportation
+    tr_transportation(transportation, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","이동수단");
+        
+        const $frag = document.createDocumentFragment();
+        transportation.forEach(obj => {
+            const $span = add_lbl(obj);
+            $frag.appendChild($span);
+        });
+        add_frag_cell($tr,"TD",$frag);
+
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_transportation
     
     /* 줄거리 */
-    tr_story(story, $tbody){}//tr_story
+    tr_story(story, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","플롯",{row:2});
+        add_simple_cell($tr,"TH","줄거리");
+
+        const $frag = document.createDocumentFragment();
+        story.forEach(item => {
+            const $p = document.createElement('P');
+            $p.innerText = item;
+            $frag.appendChild($p);
+        });
+        add_frag_cell($tr,"TD",$frag);
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_story
     
     /* 떡밥 */
-    tr_bait(bait, $tbody){}//tr_bait
+    tr_bait(bait, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","떡밥");
+
+        const $frag = document.createDocumentFragment();
+        bait.forEach(obj => {
+            add_time(obj,$frag);
+        });
+        add_frag_cell($tr,"TD",$frag);
+        
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_bait
     
     /* 관계 - 우호 */
-    tr_relation_good(relation_good, $tbody){}//tr_relation_good
+    tr_relation_good(good, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","인간관계",{row:3});
+        add_simple_cell($tr,"TH","우호");
+
+        const $frag = document.createDocumentFragment();
+        good.forEach(obj=>{
+            add_people(obj,$frag,"good");
+        });
+        add_frag_cell($tr,"TD",$frag);
+
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_relation_good
     
     /* 관계 - 중립 */
-    tr_relation_soso(relation_soso, $tbody){}//tr_relation_soso
+    tr_relation_soso(soso, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","중립");
+        
+        const $frag = document.createDocumentFragment();
+        soso.forEach(obj=>{
+            add_people(obj,$frag);
+        });
+        add_frag_cell($tr,"TD",$frag);
+
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_relation_soso
     
     /* 관계 - 적대 */
-    tr_relation_bad(relation_bad, $tbody){}//tr_relation_bad
+    tr_relation_bad(bad, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","적대");
+        
+        const $frag = document.createDocumentFragment();
+        bad.forEach(obj=>{
+            add_people(obj,$frag,"bad");
+        });
+        add_frag_cell($tr,"TD",$frag);
+
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_relation_bad
     
     /* 포인트 - 그로구 */
-    tr_p_grogu(point_grogu, $tbody){}//tr_p_grogu
+    tr_p_grogu(grogu, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","포인트",{row:2});
+        add_simple_cell($tr,"TH","그로구");
+
+        const $frag = document.createDocumentFragment();
+        grogu.forEach(obj => {add_time(obj,$frag)});
+        add_frag_cell($tr,"TD",$frag);
+
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_p_grogu
     
     /* 포인트 - 딘자린 */
-    tr_p_dindjarin(point_dindjarin, $tbody){}//tr_p_dindjarin
+    tr_p_dindjarin(dindjarin, $tbody){
+        const $tr = document.createElement('TR');
+        add_simple_cell($tr,"TH","딘자린");
+
+        const $frag = document.createDocumentFragment();
+        dindjarin.forEach(obj => {add_time(obj,$frag)});
+        add_frag_cell($tr,"TD",$frag);
+        
+        //최종
+        $tbody.appendChild($tr);
+    }//tr_p_dindjarin
     
 }//class-Include
 
@@ -202,3 +310,31 @@ function add_lbl(obj){
     $span.classList.toggle('cancel',!obj.stat);
     return $span;
 }//add_lbl
+
+function add_people(obj,$frag,rel){
+    const $p = document.createElement('P');
+    const $name = document.createElement('SPAN');
+    $name.textContent = obj.name;
+    $name.classList.add('char');
+    rel && $name.classList.add(rel);
+    $p.appendChild($name);
+
+    const $content = document.createTextNode(obj.content || '');
+    $p.appendChild($content);
+
+    $frag.appendChild($p);
+}//add_people
+
+function add_time(obj,$frag){
+    const $p = document.createElement('P');
+            
+    const $time = document.createElement('SPAN');
+    $time.classList.add('timeStamp');
+    $time.textContent = obj.time;
+    $p.appendChild($time);
+    
+    const content = document.createTextNode(obj.content);
+    $p.appendChild(content);
+
+    $frag.appendChild($p);
+}//add_time
